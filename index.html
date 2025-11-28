@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatHub - Messagerie en Temps Réel</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shorcut icon" href="img/icone.png">
+    
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>ChatHub</h1>
+                <p>Messagerie intelligente</p>
+            </div>
+
+            <button class="new-chat-btn" id="new-chat-btn">
+                <i class='bx bx-plus'></i>
+                Nouvelle conversation
+            </button>
+
+            <div class="conversations-list" id="conversations-list">
+                <div class="empty-state">
+                    <i class='bx bx-message-square-dots'></i>
+                    <p>Aucune conversation.<br>Créez-en une pour commencer !</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area" id="chat-area">
+            <div class="welcome-screen" id="welcome-screen">
+                <i class='bx bx-message-square-detail'></i>
+                <h2>Bienvenue sur <span style="color: var(--main-color);">ChatHub</span></h2>
+                <p>Sélectionnez une conversation ou créez-en une nouvelle pour commencer à discuter avec des bots IA intelligents.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Chat Modal -->
+    <div class="modal" id="new-chat-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nouvelle conversation</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label>Nom de la conversation</label>
+                <input type="text" id="conversation-name" placeholder="Ex: Projet créatif, Questions tech..." value="">
+
+                <label>Sélectionnez un bot IA</label>
+                <div class="bot-grid">
+                    <div class="bot-option" data-bot="Claude-Sonnet-4.5">
+                        <i class='bx bx-brain'></i>
+                        <div>Claude Sonnet 4.5</div>
+                    </div>
+                    <div class="bot-option" data-bot="GPT-4o">
+                        <i class='bx bx-bot'></i>
+                        <div>GPT-4o</div>
+                    </div>
+                    <div class="bot-option" data-bot="GPT-4o-mini">
+                        <i class='bx bx-chip'></i>
+                        <div>GPT-4o Mini</div>
+                    </div>
+                    <div class="bot-option" data-bot="GPT-Image-1">
+                        <i class='bx bx-image'></i>
+                        <div>GPT Image</div>
+                    </div>
+                    <div class="bot-option" data-bot="FLUX-pro-1.1">
+                        <i class='bx bx-photo-album'></i>
+                        <div>FLUX Pro</div>
+                    </div>
+                    <div class="bot-option" data-bot="Gemini-2.0-Flash">
+                        <i class='bx bx-star'></i>
+                        <div>Gemini Flash</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn secondary" id="cancel-btn">Annuler</button>
+                <button class="modal-btn primary" id="create-btn">Créer</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
